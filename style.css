@@ -1,0 +1,218 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+body {
+     display: grid;
+     place-content: center;
+     padding: 2rem 2rem;
+}
+html {
+     font-family: "Josefin Sans", sans-serif;
+     /* 3/4/600 */
+     font-size: 16px;
+}
+.container {
+     -webkit-box-shadow: 1px 2px 14px 3px rgba(0, 0, 0, 0.33);
+     box-shadow: 1px 2px 14px 3px rgba(0, 0, 0, 0.33);
+     background-image: linear-gradient(
+          135deg,
+          hsl(0, 0%, 100%),
+          hsl(0, 77%, 95%)
+     );
+     /* background-image: linear-gradient(
+          135deg,
+          hsl(0, 80%, 86%),
+           hsl(0, 74%, 74%)
+     ); */
+     min-width: 375px;
+     max-width: 1440px;
+     max-height: 800px;
+}
+
+.logo {
+     padding: 2rem;
+}
+.logo img {
+     height: 20px;
+}
+.model-pic {
+     background-image: url(./images/hero-mobile.jpg);
+     min-height: 250px;
+     max-height: 250px;
+     width: 100%;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+.title {
+     text-align: center;
+     text-transform: uppercase;
+     font-size: 2.5rem;
+     padding: 4rem 3rem 0rem 3rem;
+     letter-spacing: 8px;
+}
+.title .top {
+     color: hsl(0, 36%, 70%);
+     font-weight: 300;
+}
+.title .bottom {
+     font-weight: 600;
+}
+
+p {
+     color: hsl(0, 36%, 70%);
+     font-weight: 300;
+     text-align: center;
+     padding: 1rem 2rem;
+     line-height: 1.5rem;
+}
+.email {
+     /* display: flex;
+    padding: 1rem 1.5rem 3rem 1.5rem;    
+    justify-content: flex-end; */
+
+     position: relative;
+     margin: 2rem;
+     margin-bottom: 6rem;
+     transition: all 1s ease;
+}
+input {
+     width: 100%;
+     height: 2.5rem;
+     border: 0;
+     /* color: hsl(0, 36%, 70%); */
+     /* border-color: red; */
+     outline: none;
+     border: 1px solid hsl(0, 25%, 77%);
+     border-radius: 25px;
+     background-color: hsla(0, 77%, 95%, 0.521);
+}
+::placeholder {
+     color: hsl(0, 20%, 79%);
+     font-size: 0.65rem;
+     letter-spacing: 1px;
+     padding-left: 20px;
+}
+
+.arrow {
+     /* height: 45px; */
+     padding: 0.71rem 1.5rem;
+     background-color: hsla(0, 93%, 68%, 0.664);
+     border-radius: 25px;
+     transform: translateY(-50%);
+     position: absolute;
+     right: 0;
+     top: 50%;
+     cursor: pointer;
+
+     box-shadow: 1px 2px 14px 3px rgba(190, 6, 6, 0.568);
+     transition: all 1s ease;
+}
+
+.arrow.error {
+     background-color: hsl(0, 93%, 68%);
+     padding: 0.71rem 1.5rem;
+     /* background-color: hsla(0, 93%, 68%, 0.664); */
+     border-radius: 25px;
+     transform: translateY(-50%);
+     position: absolute;
+     right: 0;
+     top: 50%;
+
+     box-shadow: 1px 2px 14px 3px rgba(190, 6, 6, 0.568);
+     transition: all 1s ease;
+}
+.error-message.hide,
+.error.hide {
+     display: none;
+     opacity: 0;
+     position: absolute;
+     transition: all 1s ease;
+}
+.error {
+     position: absolute;
+     right: 5rem;
+     top: 50%;
+     transform: translate(0%, -50%);
+     opacity: 1;
+     transition: all 1s ease;
+}
+
+.error-message {
+     position: absolute;
+     color: hsl(0, 93%, 68%);
+     top: 2rem;
+     opacity: 1;
+     transition: all 1s ease;
+}
+/* ======================================================================== */
+/* desktop mode below */
+/* ======================================================================== */
+
+@media screen and (min-width: 600px) {
+     .container {
+          background-image: url(./images/bg-pattern-desktop.svg);
+          display: grid;
+        grid-template-columns: 0.6 1fr;
+        grid-template-rows: 1fr 330px 1fr 1fr;
+        
+        /* position: relative; */
+        grid-template-areas: 
+        "area1 area-img"
+        "area2 area-img"
+        "area3 area-img"
+        "area4 area-img"
+        ;
+     }
+
+     .model-pic {
+          grid-area: area-img;
+          background-image: url(./images/hero-desktop.jpg);
+          /* position: absolute; */
+          min-height: 100%;
+          width: 610px;
+          /* max-height: 800px; */
+          /* max-width: 600px; */
+          background-size:cover;
+          right: 0;
+          top: 0;
+     }
+
+     .logo{
+          grid-area: area1;
+          padding-left: 8rem;
+          padding-top: 4rem;
+         
+     }
+     .logo img{
+          height: 30px;
+         
+     }
+
+     .title{
+          grid-area: area2;
+          font-size: 5rem;
+          text-align: left;
+          padding-left: 8rem;
+     }
+     p{
+          grid-area: area3;
+          padding-left: 8rem;
+          max-width: 80%;
+          text-align: left;
+
+     }
+
+     .email{
+          grid-area: area4;
+          display: flex;
+          align-items: center;
+          /* justify-content: center; */
+          margin: 0;
+          margin: 0 10rem 0 8rem;
+          
+     }
+     /* ======================================================================= */
+     /* end media query */
+}
