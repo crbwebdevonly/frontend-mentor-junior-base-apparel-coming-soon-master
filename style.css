@@ -213,6 +213,10 @@ input {
           margin: 0 10rem 0 8rem;
           
      }
+
+     .error-message {top: 5rem;}
+
+     .error {top: 80%;}
      /* ======================================================================= */
      /* end media query */
 }
